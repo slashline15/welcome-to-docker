@@ -17,6 +17,8 @@ RUN npm install \
     && npm run build \
     && rm -fr node_modules
 
+RUN apk add xsel 
+    
 EXPOSE 3000
 
 # Start the app using serve command

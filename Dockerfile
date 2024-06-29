@@ -1,23 +1,9 @@
-# Start your image with a node base image
-FROM node:18-alpine
-
-# The /app directory should act as the main application directory
-WORKDIR /app
-
-# Copy the app package and package-lock.json file
-COPY package*.json ./
-
-# Copy local directories to the current local directory of our docker image (/app)
-COPY ./src ./src
-COPY ./public ./public
-
-# Install node packages, install serve, build the app, and remove dependencies at the end
-RUN npm install \
-    && npm install -g serve \
-    && npm run build \
-    && rm -fr node_modules
-
+FROM openjdk:8-jdk-alpine
+VOLUME /tmp
+ARG JAVA_OPTS
+ENV JAVA_OPTS=$JAVA_OPTS
+COPY welcometodocker.jar welcometodocker.jar
 EXPOSE 3000
-
-# Start the app using serve command
-CMD [ "serve", "-s", "build" ]
+ENTRYPOINT exec java $JAVA_OPTS -jar welcometodocker.jar
+# For Spring-Boot project, use the entrypoint below to reduce Tomcat startup time.
+#ENTRYPOINT exec java $JAVA_OPTS -Djava.security.egd=file:/dev/./urandom -jar welcometodocker.jar

@@ -32,14 +32,14 @@ void generate_cubic(double *wave, int sign) {
 void generate_quartic(double *wave, int sign) {
     for (int i = 0; i < MEMORY_SIZE; i++) {
         double x = -10.0 + (20.0 * i) / (MEMORY_SIZE - 1);
-        wave[i] = sign * (x * x * x * x - x * x);
+        wave[i] = sign * (x * x * x * x - x * x * x + x * x - x + 1);
     }
 }
 
 void generate_quintic(double *wave, int sign) {
     for (int i = 0; i < MEMORY_SIZE; i++) {
         double x = -10.0 + (20.0 * i) / (MEMORY_SIZE - 1);
-        wave[i] = sign * (x * x * x * x * x - x * x * x);
+        wave[i] = sign * (2 * x * x * x * x * x - x * x * x + x * x - x);
     }
 }
 

@@ -8,6 +8,8 @@ docker run -d -p 8088:80 --name welcome-to-docker docker/welcome-to-docker
 ```
 And open `http://localhost:8088` in your browser.
 
+![alt text](image.png)
+
 # Building
 
 Maintainers should see [MAINTAINERS.md](MAINTAINERS.md).

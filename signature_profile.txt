@@ -1,0 +1,28 @@
+Encoded state: 60920.64
+Encoded state: 179112.95
+Encoded state: 1431437.22
+Encoded state: 1098735.13
+Encoded state: 71534.94
+Encoded state: 355970.29
+Encoded state: 110190.15
+Encoded state: 3984.67
+Encoded state: 23788.21
+Encoded state: 403345.55
+Attempt 1 - Encoded state: 129221.94
+Attempt 1 - Encoded state: 7321408.51
+Attempt 1 - Encoded state: 2776711.47
+Attempt 1 - Encoded state: 140353.41
+Attempt 1 - Encoded state: 3490.60
+Attempt 1 - Encoded state: 1969.70
+Attempt 1 - Encoded state: 2172.77
+Attempt 1 - Encoded state: 45436792.62
+Attempt 1 - Encoded state: 211833.33
+Attempt 1 - Encoded state: 2966.72
+Attempt 2 - Encoded state: 3591145.17
+Attempt 2 - Encoded state: 282924.36
+Attempt 2 - Encoded state: 3424.07
+Attempt 1 - Encoded state: 4282833.97
+Attempt 2 - Encoded state: 8734963.80
+Attempt 3 - Encoded state: 3345453.09
+Attempt 4 - Encoded state: 1717287.66
+Attempt 5 - Encoded state: 385481.60

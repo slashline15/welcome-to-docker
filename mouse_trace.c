@@ -134,4 +134,4 @@ int main() {
     return 0;
 }
 
-//compile: gcc -framework ApplicationServices mouse_trace.c -o mouse_trace
+//compile: gcc -framework ApplicationServices mouse_trace.c -o mouse_trace #make sure your docker and stuff is configured 

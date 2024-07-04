@@ -3,6 +3,8 @@ FROM node:18-alpine
 
 # The /app directory should act as the main application directory
 WORKDIR /app
+docker pull nvidia/cuda:11.2.2-devel-ubuntu20.04
+
 
 # Copy the app package and package-lock.json file
 COPY package*.json ./

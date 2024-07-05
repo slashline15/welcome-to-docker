@@ -1,23 +1,20 @@
-# Start your image with a node base image
-FROM node:18-alpine
+FROM ubuntu:latest
 
-# The /app directory should act as the main application directory
+# Install necessary build tools
+RUN apt-get update && apt-get install -y \
+    gcc \
+    make \
+    libx11-dev \
+    libxtst-dev
+
+# Copy your source code into the container
+COPY mouse_trace.c /app/mouse_trace.c
+
+# Set the working directory
 WORKDIR /app
 
-# Copy the app package and package-lock.json file
-COPY package*.json ./
+# Compile the code
+RUN gcc -o mouse_trace mouse_trace.c -lX11 -lXtst
 
-# Copy local directories to the current local directory of our docker image (/app)
-COPY ./src ./src
-COPY ./public ./public
-
-# Install node packages, install serve, build the app, and remove dependencies at the end
-RUN npm install \
-    && npm install -g serve \
-    && npm run build \
-    && rm -fr node_modules
-
-EXPOSE 3000
-
-# Start the app using serve command
-CMD [ "serve", "-s", "build" ]
+# Run the compiled program
+CMD ["./mouse_trace"]

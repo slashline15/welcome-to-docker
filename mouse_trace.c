@@ -14,7 +14,7 @@ typedef struct {
 
 MouseState state = {0};
 CGPoint center = {300, 300}; // Adjust based on your screen size
-double max_distance = 100.0;
+double max_distance = 10.0;
 double max_speed = 100.0;
 double max_energy = 100.0;
 int movement_count = 0;
@@ -60,11 +60,11 @@ CGEventRef eventCallback(CGEventTapProxy proxy, CGEventType type, CGEventRef eve
         state.position = new_position;
         double speed = cabs(state.velocity);
         double displacement = cabs(state.position);
-        state.energy = speed * speed * displacement * displacement;
+        state.energy = speed*speed + displacement;
         
         movement_count++;
         
-        if (movement_count % 400 == 0) {
+        if (movement_count % 10 == 0) {
             double encoded_state = encode_state(state);
             sum_encoded_states += encoded_state;
             printf("Movement %d - Encoded state: %.2f\n", movement_count, encoded_state);
@@ -126,7 +126,7 @@ int main() {
 
     // Here you would typically hash the password and store it securely
     // For demonstration, we'll just print the length
-    printf("Password length: %lu\n", strlen(password));
+    //printf("Password length: %lu\n", strlen(password));
 
     printf("\nSignature profile and password captured.\n");
     printf("In future logins, if the signature encoding falls outside %.2f to %.2f, additional ID checks will be required.\n", min_sum, max_sum);
